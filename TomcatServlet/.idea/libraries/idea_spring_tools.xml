@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="idea-spring-tools">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../ad/idea-spring-tools" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

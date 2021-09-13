@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet( "/FirstServlet" )
+@WebServlet( "/ServletMain" )
 public class ServletMain extends HttpServlet {
 
     /******************************************************************************************************************
@@ -29,12 +29,10 @@ public class ServletMain extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("<h3>Hello World! Welcome to Servlet Programmming!");
+        out.println("<h3>Hello World! Welcome to Servlet Programming!");
         out.println("<p>Welcome for my First server");
         out.close();
-
     }
 }
