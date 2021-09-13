@@ -1,6 +1,10 @@
 /**********************************************************************************************************************
  *
- * Purpose : To check whether user name and password is correct using servlet
+ * * UC4 : Extend the Servlet to accept a valid Password
+ *   		 Rule1 – minimum 8 Characters
+ *   		 Rule2 – Should have at least 1 Upper Case
+ * 		     Rule3 – Should have at least 1 numeric number in the password
+ * 		     Rule4 – Has exactly 1 Special Character
  *
  * @author : Immanuvel Jeeva
  * @since  : 08-09-2021
@@ -51,7 +55,17 @@ public class LoginServlet extends HttpServlet{
          */
 
         String regexName = "^[A-Z]{1}[a-zA-Z]{2,}$";
-        if(userID.equals(user) && userID.matches(regexName) && password.equals(pwd)) {
+       /*
+		 * Purpose : Validate password using Regular Expression
+		  			 Rule1 – minimum 8 Characters
+		  			 Rule2 – Should have at least 1 Upper Case
+ 					 Rule3 – Should have at least 1 numeric number in the password
+					 Rule4 – Has exactly 1 Special Character
+		 */
+
+        String regexPassword = "^(?=.*[0-9])(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$)(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+
+        if(userID.equals(user) && userID.matches(regexName) && password.equals(pwd) && password.matches(regexPassword)) {
             req.setAttribute("user", user);
             req.getRequestDispatcher("LoginSuccess.jsp").forward(req, resp);
         } else {
